@@ -1,8 +1,10 @@
-var {After, Before} = require('cucumber');
+const {After, Before} = require('cucumber')
+const Page = require('../pages/page')
 
 Before(async function (scenario) {
   console.log(`Before: scenario ${scenario.pickle.name}`)
   console.log(this.parameters)
+  this.page = new Page(this.driver, 'https://www.testcookbook.com')
 });
 
 After(async function (scenario) {
