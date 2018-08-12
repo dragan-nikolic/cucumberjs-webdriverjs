@@ -6,6 +6,6 @@ Given('I visit Test Cookbook website', async function () {
 });
 
 Then('I see title Test Cookbook', async function () {
-  const title = await this.driver.getTitle()
+  const title = await this.page.getTitle()
   assert.equal(title, "Test Cookbook")
 })  

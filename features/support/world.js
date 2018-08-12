@@ -7,12 +7,15 @@ https://github.com/cucumber/cucumber-js/blob/master/docs/support_files/world.md
 */ 
  
 var {setWorldConstructor} = require('cucumber')
-var seleniumWebdriver = require('selenium-webdriver')
+var seleniumWebdriver = require('selenium-webdriver-3')
 
 function CustomWorld({attach, parameters}) {
+  // support default World parameters
   this.attach = attach
   this.parameters = parameters
-  this.driver = new seleniumWebdriver.Builder()
+
+  // create  webdriver
+  this.webdriver = new seleniumWebdriver.Builder()
                   .forBrowser(parameters.browser)
                   .build();
 }

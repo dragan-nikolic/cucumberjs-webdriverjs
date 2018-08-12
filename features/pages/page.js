@@ -7,6 +7,10 @@ class Page {
   open(extension) {
     this.browser.get(`${this.baseUrl}/${extension}`);
   }
+
+  getTitle() {
+    return this.browser.getTitle()
+  }
 }
 
 module.exports = Page
